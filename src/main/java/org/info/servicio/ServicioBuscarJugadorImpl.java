@@ -21,21 +21,31 @@ public class ServicioBuscarJugadorImpl implements ServicioBuscarJugador{
         String nombreAbuscar = scanner.nextLine();
         Integer cont = 0;
         String nombre;
+        String capitan = "No";
+        Boolean prueba = false;
+
 
         for (Equipo equipo: listaDeEquipos) {
 
             listaPlayer = equipo.getListaJugadores();
 
-                //System.out.println("JUGADOR/ES QUE COINCIDEN CON EL CRITERIO DE BUSQUEDA");
+                
+                capitan = "No";
                 for (int i =0; i< listaPlayer.size();i++) {
+                    prueba = listaPlayer.get(i).getEsCapitan().booleanValue();
+
+
 
                     if (listaPlayer.get(i).getNombre().equals(nombreAbuscar) ){
                         cont++;
+                        if (listaPlayer.get(i).getEsCapitan().booleanValue()){
+                            capitan = "Sí";
+                        }
                         if (cont ==1) {
                             System.out.println("JUGADOR/ES QUE COINCIDEN CON EL CRITERIO DE BUSQUEDA");
                         }
-                        System.out.println(listaPlayer.get(i).getNombre() + " " + listaPlayer.get(i).getApellido() + " " + listaPlayer.get(i).getPosicion() +" "+ equipo.getNombre());
-
+                        System.out.println("NOMBRE: "+ listaPlayer.get(i).getNombre() + " APELLIDO: " + listaPlayer.get(i).getApellido() + " " + listaPlayer.get(i).getPosicion() +" CAPITAN: "+ capitan + " "+ equipo.getNombre());
+                        capitan = "No";
                         }
 
                 }
@@ -44,13 +54,7 @@ public class ServicioBuscarJugadorImpl implements ServicioBuscarJugador{
 
         if(cont == 0){System.out.println("NO SE ECONTRÓ NINGUN JUGADOR LLAMADO " + nombreAbuscar);};
 
-        //servicioMenu.mostrarMenu();
-        //PASAR ESTA ESTRUCUTA AL MENU AL IGUAL QUE CREAR EQUIPO
-        /*System.out.println("INGRESE 1 PARA BUSCAR OTRO JUGADOR - 2 PARA IR AL MENU PRINCIPAL");
-        respuesta = scanner.nextInt();
-        if (respuesta == 1) {
-            this.buscarJugador();
-            } else servicioMenu.mostrarMenu();*/
+
 
     }
 }

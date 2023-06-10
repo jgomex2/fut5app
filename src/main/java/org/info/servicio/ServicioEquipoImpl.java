@@ -45,9 +45,10 @@ public class ServicioEquipoImpl implements ServicioEquipo{
         Boolean arquero = false;
         Integer respuesta = 0;
 
-        for (int i = 0; i<2; i++) {
+        for (int i = 0; i<5; i++) {
             Jugador nuevoJugador = new Jugador();
             nuevoJugador.setId(UUID.randomUUID());
+            System.out.println("DATOS DEL JUGADOR: " + (i +1));
             System.out.println("INGRESE EL NOMBRE DEL JUGADOR: ");
             nuevoJugador.setNombre(scanner.next());
             System.out.println("INGRESE EL APELLIDO DEL JUGADOR: ");
@@ -61,7 +62,7 @@ public class ServicioEquipoImpl implements ServicioEquipo{
             System.out.println("INGRESE CANTIDAD DE GOLES: ");
             nuevoJugador.setCantDeGoles(scanner.nextInt());
             nuevoJugador.setEsCapitan(false);
-            if (!capitan){
+            if (capitan == false){
                 System.out.println("ESTE JUGADOR SERÁ EL CAPITAN?? INGRESE 1 SI - 2 NO");
                 respuesta = scanner.nextInt();
                 if (respuesta == 1){
