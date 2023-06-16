@@ -48,8 +48,9 @@ public class ServicioEquipoImpl implements ServicioEquipo{
         for (int i = 0; i<5; i++) {
             Jugador nuevoJugador = new Jugador();
             nuevoJugador.setId(UUID.randomUUID());
-            System.out.println("DATOS DEL JUGADOR: " + (i +1));
-            System.out.println("INGRESE EL NOMBRE DEL JUGADOR: ");
+            System.out.println("DATOS DEL JUGADOR: ");
+            System.out.println("INGRESE EL NOMBRE DEL JUGADOR: "  + (i +1));
+            //nuevoJugador.setNombre(scanner.nextLine());
             nuevoJugador.setNombre(scanner.next());
             System.out.println("INGRESE EL APELLIDO DEL JUGADOR: ");
             nuevoJugador.setApellido(scanner.next());
@@ -70,7 +71,7 @@ public class ServicioEquipoImpl implements ServicioEquipo{
                     capitan = true;
                 }
 
-            }//else nuevoJugador.setEsCapitan(false);
+            }
 
             System.out.println("INGRESE LA POSICION DEL JUGADOR: ");
             for (int j = 0; j < arrPosicion.length ; j++)

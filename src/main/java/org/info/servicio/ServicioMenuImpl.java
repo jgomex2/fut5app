@@ -11,6 +11,7 @@ public class ServicioMenuImpl implements ServicioMenu {
     public void mostrarMenu() {
         ServicioBuscarJugadorImpl servicioBuscarJugador = new ServicioBuscarJugadorImpl();
         ServicioBuscarEquipoImpl servicioBuscarEquipo = new ServicioBuscarEquipoImpl();
+        ServicioEliminarEquipoImpl servicioEliminarEquipo = new ServicioEliminarEquipoImpl();
 
         ServicioEquipoImpl servicioEquipo = new ServicioEquipoImpl();
         System.out.println("Bienvenido a Fut5app");
@@ -90,6 +91,8 @@ public class ServicioMenuImpl implements ServicioMenu {
             case "5":
                 // code block
                 System.out.println("Opción elegida: Eliminar Equipo por nombre");
+                servicioEliminarEquipo.eliminarEquipo();
+                this.mostrarMenu();
                 break;
             case "6":
                 // code block

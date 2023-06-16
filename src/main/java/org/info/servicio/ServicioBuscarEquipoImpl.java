@@ -28,27 +28,14 @@ public class ServicioBuscarEquipoImpl implements ServicioBuscarEquipo {
         System.out.println("INGRESE EL NOMBRE DEL EQUIPO QUE DESEA BUSCAR: ");
         nombreAbuscar = scanner.nextLine();
 
-        //cont = listaDeEquipos.;
-        //System.out.println(cont);
-
-        //for (int j = 0; j < listaDeEquipos.size(); j++)
-        //    nombreEquipo =  listaDeEquipos.get(j).getNombre();
-         // listaPlayer = listaDeEquipos.get(j).getListaJugadores(); NO FUNCIONA
-
-
         for (Equipo equipo: listaDeEquipos) {
-            //System.out.println(equipo.getNombre());
-            //System.out.println(nombreAbuscar);
             nombreEquipo = equipo.getNombre();
-
-
             if(nombreAbuscar.equals(nombreEquipo)){
                 cont++;
                 listaPlayer = equipo.getListaJugadores();
                 dt = equipo.getEntrenador().getNombre() + " " + equipo.getEntrenador().getApellido();
                 if (opc == 3) {
                     for (int i = 0; i < listaPlayer.size(); i++) {
-
                         if (listaPlayer.get(i).getEsCapitan()) {
                             capitan = listaPlayer.get(i).getNombre() + " " + listaPlayer.get(i).getApellido() + " (c)";
                             i = listaPlayer.size();
@@ -65,9 +52,9 @@ public class ServicioBuscarEquipoImpl implements ServicioBuscarEquipo {
                         System.out.println("LISTA DE JUGADORES");
                         for (int i = 0; i < listaPlayer.size(); i++) {
                             jugador = listaPlayer.get(i).getNombre() + " " + listaPlayer.get(i).getApellido() + " " + listaPlayer.get(i).getEsCapitan();
-                            /*if (listaPlayer.get(i).getEsCapitan()) {
+                            if (listaPlayer.get(i).getEsCapitan().equals(true)) {
                                 jugador = jugador + " (c)";
-                            }*/
+                            }//ESTO NO ANDABA
                             System.out.println(jugador);
                         }
 

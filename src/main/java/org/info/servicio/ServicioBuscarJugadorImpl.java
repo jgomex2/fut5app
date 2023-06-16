@@ -28,14 +28,9 @@ public class ServicioBuscarJugadorImpl implements ServicioBuscarJugador{
         for (Equipo equipo: listaDeEquipos) {
 
             listaPlayer = equipo.getListaJugadores();
-
-                
                 capitan = "No";
                 for (int i =0; i< listaPlayer.size();i++) {
                     prueba = listaPlayer.get(i).getEsCapitan().booleanValue();
-
-
-
                     if (listaPlayer.get(i).getNombre().equals(nombreAbuscar) ){
                         cont++;
                         if (listaPlayer.get(i).getEsCapitan().booleanValue()){
@@ -53,8 +48,5 @@ public class ServicioBuscarJugadorImpl implements ServicioBuscarJugador{
         }
 
         if(cont == 0){System.out.println("NO SE ECONTRÓ NINGUN JUGADOR LLAMADO " + nombreAbuscar);};
-
-
-
     }
 }
